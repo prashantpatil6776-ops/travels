@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./style.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- 2. jQuery UI next -->
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+      <!-- 3. jQuery UI CSS -->
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+      <script src="./script.js"></script>
+      <title>Home Page</title>
+   </head>
+   <body>
+      <header class="main-header">
+         <div class="inner-header">
+            <div class="container">
+               <div class="cols-row">
+                  <div class="logo">
+                     <a href="./index.html">
+                     <img src="./image/logo-6.svg" alt="">
+                     </a>
+                  </div>
+                  <nav class="menu">
+                     <div class="mobile-menu" style="display: none;">
+                        <a id="menu-toggle" class="menu-toggle">
+                        <span class="menu-toggle-bar menu-toggle-bar--top"></span>
+                        <span class="menu-toggle-bar menu-toggle-bar--middle"></span>
+                        <span class="menu-toggle-bar menu-toggle-bar--bottom"></span>
+                        </a>
+                     </div>
+                     <ul class="menu-area" id="menu">
+                        <li class="menu-links">
+                           <a href="#">Travel Insurance</a>
+                           <div class="submenu">
+                              <div class="left-sub">
+                                 <div class="image-area">
+                                    <img src="./image/image 1 (1).png" alt="Travel Insurance">
+                                 </div>
+                                 <div class="content-area">
+                                    <h4>Travel Insurance</h4>
+                                    <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                       Nam gravida tincidunt mi, in bibendum sapien pellentesque vitae.
+                                       Vestibulum quis purus neque.
+                                    </p>
+                                    <button class="get-quote">GET A QUOTE</button>
+                                 </div>
+                              </div>
+                              <div class="right-sub">
+                                 <ul>
+                                    <li><a href="#">Plans</a></li>
+                                    <li><a href="#">Upgrades</a></li>
+                                    <li><a href="#">Traveller Type</a></li>
+                                    <li><a href="#">Trip Type</a></li>
+                                    <li><a href="#">Benefits</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="menu-links"><a href="#">Emergency Assistance</a></li>
+                        <li class="menu-links">
+                           <a href="#">Customer Service</a>
+                           <div class="submenu">
+                              <div class="left-sub">
+                                 <div class="image-area">
+                                    <img src="./image/bg-banner.png" alt="Travel Insurance">
+                                 </div>
+                                 <div class="content-area">
+                                    <h4>Customer Service</h4>
+                                    <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                       Nam gravida tincidunt mi, in bibendum sapien pellentesque vitae.
+                                       Vestibulum quis purus neque.
+                                    </p>
+                                    <button class="get-quote">GET A QUOTE</button>
+                                 </div>
+                              </div>
+                              <div class="right-sub">
+                                 <ul>
+                                    <li><a href="#">Trip Type</a></li>
+                                    <li><a href="#">Benefits</a></li>
+                                    <li><a href="#">Plans</a></li>
+                                    <li><a href="#">Upgrades</a></li>
+                                    <li><a href="#">Traveller Type</a></li>
+                                    <li><a href="#">Plans</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section class="hero-banner">
+         <div class="inner-banner">
+            <div class="container">
+               <div class="content-wrap">
+                  <h3>BREAKING THE LIMITS OF TRADITIONAL TRAVEL INSURANCE</h3>
+                  <h2>Find the Right Plan for You</h2>
+               </div>
+               <div class="tab-area">
+                  <div class="tabs">
+                     <button class="tab-btn active" data-tab="tab1">Single Trip</button>
+                     <button class="tab-btn" data-tab="tab2">Multi Trip</button>
+                  </div>
+                  <div class="tab-content">
+                     <div id="tab1" class="tab-pane active">
+                        <div class="tabs-text">
+                           <form action="" id="travel" data-form-id="travel">
+                              <div class="place-area">
+                                 <!-- Single-Select Dropdown -->
+                                 <div class="dropdown single-select-dropdown" data-single="true">
+                                    <div class="select-box">
+                                       <h3>Where are you travelling?</h3>
+                                       <input type="text" class="search-input" placeholder="Type or choose your destinations">
+                                       <div class="selected-items">Where are you travelling?</div>
+                                       <div class="options-container">
+                                          <div class="option" data-value="dest1">Paris</div>
+                                          <div class="option" data-value="dest2">London</div>
+                                          <div class="option" data-value="dest3">New York</div>
+                                          <div class="option" data-value="dest4">Tokyo</div>
+                                          <div class="no-result" style="display:none;">Destination not found</div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="date-feild">
+                                 <label>When do you leave?</label>
+                                 <input type="text"  placeholder="DD/MM/YYYY" class="leave" required>
+                                 <label>When do you return?</label>
+                                 <input type="text"  placeholder="DD/MM/YYYY" class="return" required>
+                              </div>
+                              <div class="age-feild">
+                                 <h3>Current age of all Travellers?</h3>
+                                 <input type="number" id="counter" class="counter" value="18" required>
+                                 <button id="increment" class="increment">+</button>
+                              </div>
+                              <div class="promo-code">
+                                 <input type="text" placeholder="Promo Code">
+                              </div>
+                             <button class="buuton-wrap" style="width: 100%;">GET A QUOTE</button>
+                           </form>
+                        </div>
+                     </div>
+                     <div id="tab2" class="tab-pane">
+                           <form action="" id="travel1" data-form-id="travel1">
+                              <div class="place-area">
+                                 <div class="dropdown multi-select-dropdown">
+                                    <div class="select-box">
+                                       <!-- <div class="selected-items">Select destination</div> -->
+                                       <h3>Where are you travelling?</h3>
+                                       <input type="text" class="search-input" placeholder="Type or choose your destinations" />
+                                       <div class="selected-items"><label for=""></label></div>
+                                       <div class="options-container">
+                                          <div class="category" data-value="cat1">
+                                             <label for="" readonly>Popular Destinations</label>
+                                             <div class="sub-options">
+                                                <div class="option" data-value="sub1">Bali [Indonesia]</div>
+                                                <div class="option" data-value="sub2">New Zealand</div>
+                                                <div class="option" data-value="sub3">USA [United States]</div>
+                                                <div class="option" data-value="sub4">United Kingdom</div>
+                                                <div class="option" data-value="sub5">World Wide</div>
+                                                <div class="option" data-value="sub6">All of Europe</div>
+                                                <div class="option" data-value="sub7">All of Asia</div>
+                                                <div class="option" data-value="sub8">India</div>
+                                                <div class="option" data-value="sub9">Goa</div>
+                                             </div>
+                                          </div>
+                                          <div class="no-result" style="display:none;">Destination not found</div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="date-feild">
+                                 <label>When do you leave?</label>
+                                 <input type="text"  placeholder="DD/MM/YYYY" class="leave" required>
+                                 <label>When do you return?</label>
+                                 <input type="text"  placeholder="DD/MM/YYYY" class="return" required>
+                              </div>
+                              <div class="age-feild">
+                                 <h3>Current age of all Travellers?</h3>
+                                 <input type="number" id="counter" class="counter" value="18" required>
+                                 <button id="increment" class="increment">+</button>
+                              </div>
+                              <div class="promo-code">
+                                 <input type="text" placeholder="Promo Code">
+                              </div>
+                              <button class="buuton-wrap" style="width: 100%;">GET A QUOTE</button>
+                           </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class="menu-overlay"></div>
+   </body>
+</html>

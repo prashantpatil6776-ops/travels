@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+   </head>
+   
+<body class="show-data">
+     <header class="main-header">
+         <div class="inner-header">
+            <div class="container">
+               <div class="cols-row">
+                  <div class="logo">
+                     <a href="./index.html">
+                     <img src="./image/logo-6 (1).svg" alt="" class="desktop-logo">
+                     <img src="./image/Group 12.svg" alt="" class="mobile-logo" style="display: none;">
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+<section class="data">
+    <div class="main-pro">
+     <div class="container">
+         <ul class="progress">
+            <li><div class="icon active"><img src="./image/Vector (4).svg" alt=""></div>
+            <div class="content">Get Quote</div></li>
+             <li><div class="icon"><img src="./image/Vector (5).svg" alt=""></div>
+            <div class="content">Plan Option</div></li>
+             <li><div class="icon"><img src="./image/Ellipse 1.svg" alt=""></div>
+            <div class="content">Travellers</div></li>
+             <li><div class="icon"><img src="./image/Ellipse 1.svg" alt=""></div>
+            <div class="content">Payment</div></li>
+        </ul>
+     </div>
+        </div>
+    <div class="container">
+      
+        <div id="display-data"></div>
+<div style="margin-top:20px;">
+  <button id="edit-btn" style="display:none;">Edit</button>
+  <button id="back-btn" style="display:none;"> <img src="./image/Vector (3).svg" alt=""> Back</button>
+</div>
+    </div>
+</section>
+
+<section class="plan-comparison">
+<div class="container">
+    <div class="row">
+        
+    </div>
+</div>
+</section>
+</body>
+</html>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const data = JSON.parse(localStorage.getItem('travelData'));
+  const display = document.getElementById('display-data');
+  const editBtn = document.getElementById('edit-btn');
+  const backBtn = document.getElementById('back-btn');
+
+  if (data) {
+    display.innerHTML = `
+      <p><strong>Destination:</strong> ${data.destination || 'N/A'}</p>
+      <div>
+      <label><strong>Dates:</strong> <p> ${data.leave || 'N/A'}</p>
+      <p>${data.ret || 'N/A'}</p></label>
+      </div>
+      <p><strong>Traveller Ages:</strong> ${data.age || 'N/A'}</p>
+    `;
+
+    // Show buttons
+    editBtn.style.display = 'inline-block';
+    backBtn.style.display = 'inline-block';
+
+    // Edit button -> same as back but can keep separate
+    editBtn.addEventListener('click', function() {
+      // Mark which form to edit
+      localStorage.setItem('editFormId', data.formId);
+      window.location.href = 'index.html';
+    });
+
+    // Back button -> go back to form page, preserve prefilled data
+    backBtn.addEventListener('click', function() {
+      // Same as edit: open correct tab with previous data
+      localStorage.setItem('editFormId', data.formId);
+      window.location.href = 'index.html';
+    });
+
+  } else {
+    display.innerHTML = '<p>No data found.</p>';
+  }
+});
+</script>
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+.show-data .main-header .inner-header{
+    position: unset;
+    background: #0B2347;
+
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+body{
+        font-family: Lato, sans-serif;
+}
+.logo {
+    text-align: center;
+    padding: 16px;
+}
+.container {
+    width: 100%;
+    max-width: 1380px;
+    padding: 0 30px;
+    margin: auto;
+    position: relative;
+}
+button#back-btn {
+    position: absolute;
+    top: -50px;
+    left: 0;
+}
+button#back-btn {
+    position: absolute;
+    top: -140px;
+    left: 34px;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 15px;
+    line-height: 22px;
+    cursor: pointer;
+}
+button#back-btn img{
+    margin-right: 10px;
+   position: relative;
+    top: 6px;
+
+}
+.main-pro {
+    box-shadow: 0px 0px 20px -8px #00000040;
+    display: flex;
+    padding: 20px;
+}
+ul.progress {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+ul.progress li{
+    width: 25%;
+    position: relative;
+}
+.icon:after {
+    content: '';
+    border: 1px solid #E2E2E2;
+    width: calc(100% - 22px);
+    height: 2px;
+    background: #E2E2E2;
+    position: absolute;
+    top: 10px;
+    left: 22px;
+        z-index: -1;
+}
+.icon.active:after {
+    background: #0078D4;
+}
+.content {
+    font-size: 14px;
+    line-height: 21px;
+
+}
+div#display-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+div#display-data >p,
+div#display-data div {
+    font-size: 15px;
+    line-height: 22px;
+    color: #636363;
+    width: 33.33%;
+    text-align: center;
+}
+
+div#display-data  strong{
+   color:  #0B254B;
+}
+div#display-data > div,
+div#display-data >p{
+    display: inline-block;
+}
+div#display-data label{
+    display: flex;
+    justify-content: center;
+}
+button#edit-btn {
+    border: 1px solid #0078D4;
+    padding: 6px 11px;
+    background: transparent;
+    font-size: 14px;
+    color: #0078D4;
+    position: absolute;
+    right: 0;
+    top: 39px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+div#display-data {
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+div#display-data > div, div#display-data >p,
+div#display-data > div, div#display-data >p > strong {
+    width: 100%;
+    text-align: left;
+            display: block;
+}
+div#display-data label {
+    justify-content: flex-start;
+}
+.content {
+    font-size: 10px;
+    line-height: 15px;
+            margin-top: 7px;
+}
+div#display-data label > p{
+    width: 100%;
+}
+button#edit-btn {
+    right: 20px;
+    top: 20px;
+}
+img.desktop-logo {
+    display: none;
+}
+img.mobile-logo {
+    display: block !important;
+    margin: auto;
+}
+.logo {
+    padding: 25px;
+}
+button#back-btn {
+    top: -142px;
+    left: 30px;
+}
+}
+</style>
